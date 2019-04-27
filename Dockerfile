@@ -10,6 +10,7 @@ RUN apt-get -y update && \
         texlive-latex-extra \
         poppler-utils \
         inkscape \
+        librsvg2-2 \
         ca-certificates \
         biber \
         make \
