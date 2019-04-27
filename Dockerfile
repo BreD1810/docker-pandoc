@@ -11,7 +11,6 @@ RUN apt-get -y update && \
         poppler-utils \
         inkscape \
         ca-certificates \
-        librsvg \
         biber \
         make \
         curl \
