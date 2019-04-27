@@ -1,6 +1,8 @@
 FROM theorangeone/docker-pandoc
 
-CMD /bin/sh
+RUN ls -alh /bin
+
+CMD /bin/bash
 
 
 # FROM microsoft/vsts-agent:ubuntu-16.04
