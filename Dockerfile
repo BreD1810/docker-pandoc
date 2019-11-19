@@ -8,6 +8,7 @@ RUN apt-get -y update && \
         texlive-bibtex-extra \
         texlive-pstricks \
         texlive-latex-extra \
+        texlive-lang-english \
         poppler-utils \
         inkscape \
         librsvg2-2 \
