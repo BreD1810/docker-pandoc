@@ -20,4 +20,4 @@ RUN pacman -Syy --noconfirm pacman-contrib curl sed --needed && \
 	rm -rf /var/lib/pacman/sync /tmp/* /var/tmp/* && \
 	source /etc/profile.d/perlbin.sh
 
-CMD /bin/sh
+CMD /bin/bash --login
