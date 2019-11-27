@@ -18,6 +18,7 @@ RUN pacman -Syyu --noconfirm reflector && \
 		inkscape \
 		librsvg && \
 	pacman -Scc --noconfirm && \
-	rm -rf /var/lib/pacman/sync /tmp/* /var/tmp/*
+	rm -rf /var/lib/pacman/sync /tmp/* /var/tmp/* && \
+	source /etc/profile.d/perlbin.sh
 
 CMD /bin/sh
