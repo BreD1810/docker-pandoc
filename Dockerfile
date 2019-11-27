@@ -1,8 +1,8 @@
 FROM archlinux/base
 
-RUN pacman -Syyu --noconfirm reflector && \
-	reflector --age 12 --sort rate --save /etc/pacman.d/mirrorlist && \
-	pacman -Syu --noconfirm \
+RUN pacman -Syyu --noconfirm pacman-contrib curl sed --needed && \
+	curl -s "https://www.archlinux.org/mirrorlist/?country=FR&country=GB&use_mirror_status=on" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist && \
+	pacman -Syu --noconfirm --needed \
 		pandoc \
 		texlive-core \
 		texlive-pictures \
