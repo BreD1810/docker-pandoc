@@ -18,6 +18,5 @@ RUN pacman -Syy --noconfirm pacman-contrib curl sed --needed && \
 		librsvg && \
 	pacman -Scc --noconfirm && \
 	rm -rf /var/lib/pacman/sync /tmp/* /var/tmp/* && \
-	source /etc/profile.d/perlbin.sh
 
 CMD /bin/bash --login
