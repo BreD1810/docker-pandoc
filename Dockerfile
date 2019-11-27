@@ -19,4 +19,6 @@ RUN pacman -Syy --noconfirm pacman-contrib curl sed --needed && \
 	pacman -Scc --noconfirm && \
 	rm -rf /var/lib/pacman/sync /tmp/* /var/tmp/*
 
-CMD /bin/bash --login
+ENV PATH="/usr/bin/vendor_perl/:${PATH}"
+
+CMD /bin/sh
