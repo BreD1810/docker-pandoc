@@ -1,28 +1,23 @@
-FROM bitnami/minideb:stretch
+FROM archlinux/base
 
-RUN apt-get -y update && \
-    apt-get -y install --no-install-recommends \
-        pandoc \
-        texlive \
-        texlive-pictures \
-        texlive-bibtex-extra \
-        texlive-pstricks \
-        texlive-latex-extra \
-        texlive-lang-english \
-        poppler-utils \
-        inkscape \
-        librsvg2-2 \
-        ca-certificates \
-        biber \
-        make \
-        curl \
-        git \
-        poppler-utils \
-        bash && \
-    curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && \
-    apt-get install git-lfs && \
-    apt-get -yq autoremove && \
-    apt-get clean -y && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN pacman -Syyu --noconfirm reflector && \
+	reflector --age 12 --sort rate --save /etc/pacman.d/mirrorlist && \
+	pacman -Syu --noconfirm \
+		pandoc \
+		texlive-core \
+		texlive-pictures \
+		texlive-bibtexextra \
+		texlive-pstricks \
+		texlive-latexextra \
+		ca-certificates \
+		biber \
+		make \
+		curl \
+		git \
+		git-lfs \
+		inkscape \
+		librsvg && \
+	pacman -Scc --noconfirm && \
+	rm -rf /var/lib/pacman/sync /tmp/* /var/tmp/*
 
 CMD /bin/sh
