@@ -12,7 +12,6 @@ RUN pacman -Syy --noconfirm pacman-contrib curl sed --needed && \
 		ca-certificates \
 		biber \
 		make \
-		curl \
 		git \
 		git-lfs \
 		inkscape \
