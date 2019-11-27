@@ -17,6 +17,6 @@ RUN pacman -Syy --noconfirm pacman-contrib curl sed --needed && \
 		inkscape \
 		librsvg && \
 	pacman -Scc --noconfirm && \
-	rm -rf /var/lib/pacman/sync /tmp/* /var/tmp/* \
+	rm -rf /var/lib/pacman/sync /tmp/* /var/tmp/*
 
 CMD /bin/bash --login
